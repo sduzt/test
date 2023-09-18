@@ -144,6 +144,7 @@ html{
     display: block;
     float: left;
     margin-right: 5px;
+    font-family: 'Times New Roman';
 }
 .msg_cage{
     padding-left: 10px;
