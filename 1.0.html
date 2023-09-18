@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link href="css/BigData.css" rel="stylesheet" type="text/css" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link href="css/index01.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.js"></script>
+    <link href="js/bstable/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bstable/css/bootstrap-table.css" rel="stylesheet" type="text/css" />
+    <link href="css/Security_operation.css" rel="stylesheet" type="text/css" />
+<!--     <link rel="stylesheet" href="js/artDialog/skins/default.css" type="text/css"/>
+    <script src="js/laydate.js"></script> -->
+    <script src="js/Home_page.js"></script>
+    <meta charset="UTF-8">
+    <title>智能识别检测系统</title>
+
+</head>
+<body>
+    <div class="data">
+        <div class="data-title"align="center">
+            <h1 style="font-size: 40px;">上瓦片智能识别检测系统</h1>
+        </div>
+        <div class="hp_con_right">
+            <div class="right_att"><p class="time" id="time" style="font-family:Times New Roman;font-size: 40px;">00:00:00</p></div>
+        </div>
+        <div class="left_cage">
+            <div class="dataAllBorder01 cage_cl" style="margin-top: 9% !important; height: 24%;">
+                <video autoplay="autoplay" loop="loop" class="dataAllBorder02 video_cage">
+                    <source class="video" title="主监控位" src="video/test_mv02.mov"/>
+                </video>
+            </div>
+            <div class="dataAllBorder01 cage_cl" style="margin-top: 1.5% !important; height: 38%;">
+                <div class="dataAllBorder02 video_cage">
+                    <img class="video_around video_around_chose" src="video/video.jpg">
+                    <img class="video_around" src="video/video.jpg">
+                    <img class="video_around" src="video/video.jpg">
+                    <img class="video_around" src="video/video.jpg">
+                </div>
+            </div>
+            <div class="dataAllBorder01 cage_cl" style="margin-top: 1.5% !important; height: 22%;">
+                <div class="dataAllBorder02 video_cage">
+                    <div class="left_title">
+                        <p>&ensp;&ensp;时间&ensp;&emsp;|&emsp;产品编码&emsp;|&emsp;&emsp;漏装位置&emsp;&emsp;</p>
+                    </div>
+                    <div class="message_scroll_box">
+                        <div class="message_scroll">
+                        <div class="scroll_top">
+                            <span class="scroll_timer">2023-8-13/11:57&ensp;</span>
+                            <span class="scroll_title">7423S022709</span>
+                            <span class="scroll_NO">7</span>
+                        </div>
+                    </div>
+                        <div class="message_scroll">
+                            <div class="scroll_top">
+                                <span class="scroll_timer">17-09-13/9:52</span>
+                                <span class="scroll_title">数据流量警示</span>  
+                            </div>
+                        </div>
+                        <div class="message_scroll">
+                            <div class="scroll_top">
+                                <span class="scroll_timer">17-09-13/9:53</span>
+                                <span class="scroll_title">数据流量警示</span>
+                            </div>
+                        </div>
+                        <div class="message_scroll">
+                            <div class="scroll_top">
+                                <span class="scroll_timer">17-09-13/9:54</span>
+                                <span class="scroll_title">数据流量警示</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center_cage">
+            <div class="dataAllBorder01 cage_cl" style="margin-top: 3.5% !important; height:47.4% /*62.7%*/; position: relative;">
+                <div class="dataAllBorder02" style="position: relative; overflow: hidden;">
+                    <!--标题栏-->
+                    <div class="map_title_box" style="height: 6%">
+                        <div class="map_title_innerbox">
+                            <div class="upload-file">
+                                <input type="file" class="input-file" multiple="true">  
+                                <span class="tip">点击上传图片</span>
+                              </div>
+                        </div>
+                    </div>
+                    <input type="file" id="file" style="display: none" onchange="upload(this)">
+                    <button class="myBtn" onclick="fileBtn()">
+                    </button>
+                    <!-- <img src="video/1.jpg" style="height:94%;position:relative;left:20%;"> -->
+                </div>
+            </div>
+            <!--中间下侧-->
+            <div class="dataAllBorder01 cage_cl" style="margin-top: 0.6% !important; height: 47.4%/*32.1%*/;">
+                <div class="dataAllBorder02" id="map_title_innerbox">
+                    <div class="map_title_box" style="height: 6%">
+                        <div class="map_title_innerbox">
+                            <div class="map_title" style="background-image: url(img/second_title.png);">检测结果</div>
+                        </div>
+                    </div>
+                    <img src="video/2.jpg" style="height:94%;position:relative;left:20%;">
+                </div>
+            </div>
+        </div>
+
+        <!--页面右侧-->
+        <div class="right_cage">
+            <!--顶部切换位置-->
+            <div class="dataAllBorder01 cage_cl" style="margin-top: 9% !important; height: 28%">
+                <!--实时检测页右上角-->
+                <div class="dataAllBorder02" id="cage_cl" >
+                    <div class= "WOS">WOS十项原则</h1></div>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">一、客户满意是我们的宗旨</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">二、高素质的员工团队</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">三、质量在我手中</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">四、安全、环保的工作环境</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">五、</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">六、</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">七、</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">八、</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">九、</p>
+                    <p align="left" style="color:rgb(112, 154, 245);font-size: 15px;font-family:楷体;text-indent: 5px;padding: 0px 15px">十、</p>
+                </div>
+            </div>
+            <!--实时检测页右下角-->
+            <div class="dataAllBorder01 cage_cl check_decrease" style="margin-top: 1.5% !important; height: 27%; position: relative;">
+                <div class="dataAllBorder02" id="cage_cl" >
+
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function TimeControl(){
+        $(".message_scroll_box").animate({marginTop:3},800,
+                function(){
+                    $(".message_scroll_box").css({marginTop:0});    
+                    $(".message_scroll_box .message_scroll:first").before($(".message_scroll_box .message_scroll:last"));    
+
+                });
+    }
+    var T=setInterval(TimeControl,2300);    
+    $(".message_scroll_box").mouseenter(function(){
+        clearInterval(T);    
+    })
+            .mouseleave(function(){
+                T=setInterval(TimeControl,2500);
+            })
+</script>
+</body>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="./js/time.js"></script>
+</html>
